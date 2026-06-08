@@ -3,7 +3,7 @@ import { COLORS } from '../../constants/data'
 export default function Header({ onSignOut }) {
   return (
     <div style={styles.header}>
-      <h1 style={styles.logo}>🌿 HairGrow</h1>
+      <h1 style={styles.logo}>🌿 Better Together Tracker</h1>
       <button onClick={onSignOut} style={styles.signOutButton}>
         Sign Out
       </button>

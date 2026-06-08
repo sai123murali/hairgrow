@@ -56,7 +56,7 @@ export default function SignupScreen({ onSignUp, onSignInWithGoogle, onSwitchToL
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.logo}>🌿 HairGrow</h1>
+        <h1 style={styles.logo}>🌿 Better Together Tracker</h1>
         <p style={styles.subtitle}>Start your hair regrowth journey today</p>
 
         {success && (
@@ -139,6 +139,9 @@ const styles = {
     width: '100%',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.1)',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
   },
   logo: {
     fontSize: '36px',
@@ -183,7 +186,7 @@ const styles = {
     border: '1px solid rgba(255, 255, 255, 0.2)',
     borderRadius: '12px',
     padding: '15px',
-    fontSize: '16px',
+    fontSize: '20px',
     fontWeight: 'bold',
     cursor: 'pointer',
     display: 'flex',
