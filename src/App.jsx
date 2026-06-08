@@ -3,6 +3,7 @@ import { useAuth } from './hooks/useAuth'
 import { useChecks } from './hooks/useChecks'
 import { useYoga } from './hooks/useYoga'
 import { useProgress } from './hooks/useProgress'
+import useProfile from './hooks/useProfile'
 import { COLORS } from './constants/data'
 
 // Auth components
@@ -14,6 +15,7 @@ import TodayTab from './components/Today/TodayTab'
 import YogaTab from './components/Yoga/YogaTab'
 import WeekTab from './components/Week/WeekTab'
 import ProgressTab from './components/Progress/ProgressTab'
+import ProfileTab from './components/Profile/ProfileTab'
 
 // Layout components
 import Header from './components/Layout/Header'
@@ -25,6 +27,7 @@ function App() {
   const { checks, toggleCheck } = useChecks(user)
   const { yogaSessions, togglePose } = useYoga(user)
   const { getScoreForMonth, updateScore } = useProgress(user)
+  const { profile, loading: profileLoading, updateProfile } = useProfile(user)
 
   const [authMode, setAuthMode] = useState('login') // 'login' or 'signup'
   const [activeTab, setActiveTab] = useState('today')
@@ -74,6 +77,9 @@ function App() {
         {activeTab === 'week' && <WeekTab />}
         {activeTab === 'progress' && (
           <ProgressTab getScoreForMonth={getScoreForMonth} onUpdateScore={updateScore} />
+        )}
+        {activeTab === 'profile' && (
+          <ProfileTab user={user} profile={profile} onSaveProfile={updateProfile} />
         )}
       </div>
 
