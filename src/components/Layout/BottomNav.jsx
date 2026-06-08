@@ -6,6 +6,7 @@ export default function BottomNav({ activeTab, onTabChange }) {
     { id: 'yoga', icon: '🧘', label: 'Yoga' },
     { id: 'week', icon: '🗓️', label: 'Week' },
     { id: 'progress', icon: '📊', label: 'Progress' },
+    { id: 'profile', icon: '👤', label: 'Profile' },
   ]
 
   return (
